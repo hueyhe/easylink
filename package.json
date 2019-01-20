@@ -6,9 +6,9 @@
   },
   "name": "easylink",
   "description": "Quick link or unlink projects with yarn.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "bin": {
-    "easylink": "link.js"
+    "easylink": "./bin/link.js"
   },
   "devDependencies": {},
   "repository": "git+https://github.com/hueyhe/easylink.git",
