@@ -6,7 +6,7 @@
   },
   "name": "easylink",
   "description": "Quick link or unlink projects with yarn.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bin": {
     "easylink": "link.js"
   },
