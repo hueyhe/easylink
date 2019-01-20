@@ -9,7 +9,7 @@ $ yarn add easylink -D
 ## Configuration
 Add `.linkrc.json` file under the root directory of your project.
 
-## Example
+### Example
 ```json
 {
   "react": {
@@ -21,4 +21,9 @@ Add `.linkrc.json` file under the root directory of your project.
   },
   "other-module": { ... }
 }
+```
+
+## Usage
+```bash
+$ ./node_modules/.bin/easylink [--reset]
 ```
