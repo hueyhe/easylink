@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "ora": "^3.0.0",
+    "yargs": "^12.0.5"
+  },
+  "name": "easylink",
+  "description": "Quick link or unlink projects with yarn.",
+  "version": "1.0.0",
+  "bin": {
+    "easylink": "link.js"
+  },
+  "devDependencies": {},
+  "repository": "git+https://github.com/hueyhe/easylink.git",
+  "keywords": [
+    "yarn",
+    "link",
+    "multiple",
+    "projects"
+  ],
+  "author": "Huey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hueyhe/easylink/issues"
+  },
+  "homepage": "https://github.com/hueyhe/easylink#readme"
+}
