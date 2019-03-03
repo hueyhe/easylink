@@ -8,7 +8,7 @@ const exec = util.promisify(require('child_process').exec);
 
 const cwd = process.cwd();
 const configPath = path.resolve(process.cwd(), '.linkrc.json');
-const config = require(configPath);
+  var config = require(configPath);
 
 const argv = require('yargs')
   .usage("Example: yarn easylink --reset")
@@ -24,9 +24,12 @@ const argv = require('yargs')
     describe: 'Reset block to production mode',
     boolean: true,
   })
+  .option('status', {
+    describe: 'Show the link status'
+  })
   .argv;
 
-const { dev, reset } = argv;
+const { dev, reset, status } = argv;
 const defaultWorkspace = ['.'];
 const resolveModulePath = (name, workspace) => {
   return path.resolve(workspace, 'node_modules', name);
@@ -197,6 +200,21 @@ async function unlinkModule(name, localPath, workspace = ['.']) {
 // Reset block to production mode
 if (reset) {
   return unlink();
+}
+
+if (status) {
+  const modules = Object.keys(config);
+  modules.forEach((item) => {
+    const workspace = config[item].workspace || ['.'];
+    workspace.forEach((wItem) => {
+      const projectPath = formatPrjPath(wItem);
+      const modulePath = resolveModulePath(item, projectPath);
+      if (isModuleLinked(modulePath)) {
+        console.log(chalk.green(`✔ linked:`), chalk.white(`${projectPath}/${item} `));
+      } 
+    })
+  });
+  return;
 }
 
 link();
